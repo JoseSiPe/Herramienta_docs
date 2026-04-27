@@ -215,7 +215,7 @@ Documentos en evaluacion/ omitidos:
 
 ## REGLAS GENERALES DEL AGENTE
 
-- Tras el PASO 1, opera de forma completamente autónoma sin solicitar input adicional al usuario
+- Tras el PASO 1, opera de forma autónoma. Las únicas excepciones donde se permite interacción adicional con el usuario son: (a) PASO 3.1 cuando `entradas/` está vacía y se requiere autorización por cada descarga de internet, y (b) cualquier situación de error no resuelta
 - No tomes decisiones sobre dominio o contexto sin confirmación del usuario en el PASO 1
 - No generes contenido inferido o externo a los documentos fuente
 - Conserva todos los provisionales como registro del proceso

@@ -17,6 +17,7 @@ Todo el proceso es autónomo tras una configuración inicial mínima.
 ```
 Herramienta_Docs/
 ├── Orquestador.md        ← punto de entrada para el agente
+├── AVISO_LEGAL.txt       ← descargo de responsabilidad
 ├── entradas/             ← depositar aquí los documentos fuente a revisar
 ├── salidas/              ← fichas generadas por el agente
 ├── evaluacion/           ← documentos humanos para contrastar

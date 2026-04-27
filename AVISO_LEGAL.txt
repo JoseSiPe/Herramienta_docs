@@ -82,5 +82,5 @@ descritos en este documento. Si no está de acuerdo con alguno de
 estos términos, no utilice la herramienta.
 
 ========================================================
-  Herramienta_Docs — Versión 1.0
+  Herramienta_Docs — Versión 1.01
 ========================================================
