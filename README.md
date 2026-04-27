@@ -21,23 +21,42 @@ Herramienta_Docs/
 ├── salidas/              ← fichas generadas por el agente
 ├── evaluacion/           ← documentos humanos para contrastar
 │   └── propuestas/       ← propuestas generadas por el agente
-└── mds/
-    ├── Herramienta_Docs.md   ← núcleo operativo
-    ├── instrucciones.md      ← reglas del proceso y guardrails
-    ├── formato.md            ← plantillas de fichas y propuestas
-    └── contexto_[dominio].md ← generado automáticamente por sesión
+├── mds/
+│   ├── Herramienta_Docs.md   ← núcleo operativo
+│   ├── instrucciones.md      ← reglas del proceso y guardrails
+│   ├── formato.md            ← plantillas de fichas y propuestas
+│   └── contexto_[dominio].md ← generado automáticamente por sesión
+└── .claude/
+    └── skills/
+        ├── correr-herramienta/   ← ejecuta la rutina completa
+        ├── nuevo-dominio/        ← fuerza onboarding de dominio nuevo
+        └── estado-docs/          ← revisa el estado de las carpetas
 ```
 
 ## Cómo usar
 
 1. Deposita los documentos a revisar en `entradas/`
 2. (Opcional) Deposita documentos humanos en `evaluacion/` para contraste
-3. Abre una sesión con el agente y escribe:
+3. Abre una sesión con el agente y usa el skill:
+
+   ```
+   /correr-herramienta [ruta a Herramienta_Docs]
+   ```
+
+   O si no tienes los skills disponibles, escribe:
 
    > "Corre la rutina de Herramienta_Docs ubicada en [ruta]"
 
 4. El agente te pedirá el dominio temático y, si no existe un contexto previo, te hará 5 preguntas de configuración
 5. A partir de ahí opera de forma autónoma hasta generar el reporte final
+
+## Skills disponibles
+
+| Skill | Descripción |
+|---|---|
+| `/correr-herramienta [ruta]` | Ejecuta la rutina completa de principio a fin |
+| `/nuevo-dominio [ruta]` | Crea un contexto de dominio nuevo sin ejecutar la rutina |
+| `/estado-docs [ruta]` | Muestra qué hay en cada carpeta sin procesar nada |
 
 ## Outputs
 

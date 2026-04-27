@@ -137,15 +137,20 @@ PASO 3 — Ubica la herramienta
 --------------------------------------------------------------
 PASO 4 — Dale la instrucción a Claude
 --------------------------------------------------------------
-  En la ventana de chat de Claude Code, escribe exactamente esto
-  (reemplazando la ruta con la tuya):
+  OPCIÓN A — Usando el skill (recomendado):
+  Si tienes Claude Code con acceso a esta carpeta, escribe:
+
+    /correr-herramienta [pega aquí la ruta]
+
+  Ejemplo real:
+    /correr-herramienta C:\Users\Maria\Documentos\Herramienta_Docs
+
+  OPCIÓN B — Instrucción manual:
+  Si no reconoce el skill, escribe esto en el chat:
 
     "Corre la rutina de Herramienta_Docs ubicada en [pega aquí la ruta]"
 
-  Ejemplo real:
-    "Corre la rutina de Herramienta_Docs ubicada en C:\Users\Maria\Documentos\Herramienta_Docs"
-
-  Claude leerá el archivo Orquestador.md y comenzará el proceso.
+  En ambos casos, Claude leerá el Orquestador.md y comenzará el proceso.
 
 --------------------------------------------------------------
 PASO 5 — Responde las preguntas de configuración
@@ -184,6 +189,30 @@ PASO 6 — Espera y revisa los resultados
     Herramienta_Docs > evaluacion > propuestas    (propuestas de mejora)
 
 
+SKILLS (COMANDOS RÁPIDOS)
+--------------------------
+Los skills son atajos que puedes escribir directamente en Claude Code
+para ejecutar funciones específicas de la herramienta sin tener que
+escribir instrucciones largas.
+
+  /correr-herramienta [ruta]
+    Ejecuta el proceso completo: lee los documentos de "entradas",
+    genera las fichas y, si hay documentos en "evaluacion", genera
+    las propuestas de contraste.
+    Ejemplo: /correr-herramienta C:\Users\Maria\Documentos\Herramienta_Docs
+
+  /nuevo-dominio [ruta]
+    Crea una configuración nueva para un dominio temático, incluso si
+    ya existe una configuración anterior para ese dominio. Útil cuando
+    quieres redefinir qué información extraer sin correr todo el proceso.
+    Ejemplo: /nuevo-dominio C:\Users\Maria\Documentos\Herramienta_Docs
+
+  /estado-docs [ruta]
+    Muestra un resumen de qué documentos hay en cada carpeta sin
+    procesar nada. Útil para verificar antes de lanzar la rutina.
+    Ejemplo: /estado-docs C:\Users\Maria\Documentos\Herramienta_Docs
+
+
 PREGUNTAS FRECUENTES
 ---------------------
 ¿Puedo usarla para distintos temas?
@@ -220,11 +249,16 @@ ESTRUCTURA DE ARCHIVOS (REFERENCIA)
   ├── salidas/               ← AQUÍ aparecen las fichas generadas
   ├── evaluacion/            ← AQUÍ van tus documentos humanos (opcional)
   │   └── propuestas/        ← AQUÍ aparecen las propuestas generadas
-  └── mds/                   ← archivos del sistema (no modificar)
-      ├── Herramienta_Docs.md
-      ├── instrucciones.md
-      ├── formato.md
-      └── contexto_[tema].md (se genera automáticamente)
+  ├── mds/                   ← archivos del sistema (no modificar)
+  │   ├── Herramienta_Docs.md
+  │   ├── instrucciones.md
+  │   ├── formato.md
+  │   └── contexto_[tema].md (se genera automáticamente)
+  └── .claude/               ← comandos rápidos (no modificar)
+      └── skills/
+          ├── correr-herramienta/
+          ├── nuevo-dominio/
+          └── estado-docs/
 
 
 ========================================================
