@@ -1,14 +1,22 @@
 # Documentos fuente (no versionar contenido sensible)
 entradas/*
 !entradas/.gitkeep
+
+# Documentos humanos para evaluación
 evaluacion/*.pdf
 evaluacion/*.ppt
 evaluacion/*.pptx
 evaluacion/*.doc
 evaluacion/*.docx
 
-# Contextos generados por sesión (opcional — quitar si quieres versionar los contextos)
-# mds/contexto_*.md
+# Outputs generados por uso de la herramienta (no versionar)
+salidas/*
+!salidas/.gitkeep
+evaluacion/propuestas/*
+!evaluacion/propuestas/.gitkeep
+
+# Contextos generados por sesión (no versionar)
+mds/contexto_*.md
 
 # Sistema operativo
 .DS_Store
