@@ -1,0 +1,232 @@
+========================================================
+  HERRAMIENTA_DOCS — GUÍA COMPLETA PARA EL USUARIO
+========================================================
+
+¿QUÉ ES ESTA HERRAMIENTA?
+--------------------------
+Herramienta_Docs es un asistente automatizado de lectura y síntesis de documentos
+que funciona dentro de Claude Code (la inteligencia artificial de Anthropic).
+
+En términos simples: tú le das documentos (PDFs, presentaciones de PowerPoint o
+archivos de Word), y la herramienta los lee con cuidado, extrae lo más importante
+y genera fichas organizadas con esa información. Todo basado exclusivamente en lo
+que dice el documento, sin inventar ni agregar nada externo.
+
+No necesitas saber programar ni tener conocimientos técnicos para usarla.
+Solo necesitas saber qué documentos quieres analizar y tener Claude Code instalado.
+
+
+¿PARA QUÉ SIRVE?
+----------------
+Sirve para hacer lo que se conoce como una "revisión sistemática de documentos":
+leer una colección de textos sobre un mismo tema, extraer la información relevante
+de cada uno y organizarla de forma consistente y comparable.
+
+Lo que normalmente tomaría horas de lectura y resumen manual, esta herramienta
+lo hace de forma ordenada, trazable y repetible. Siempre siguiendo el mismo método,
+sin importar cuántos documentos sean.
+
+
+CASOS DE USO
+------------
+Esta herramienta es útil en cualquier situación donde necesites revisar
+varios documentos sobre un mismo tema y quieras tener fichas organizadas de cada uno.
+
+Algunos ejemplos concretos:
+
+  INVESTIGACIÓN Y ACADEMIA
+  → Tienes 20 artículos sobre un tema y necesitas extraer
+    metodologías, resultados y conclusiones de cada uno.
+  → Estás escribiendo un estado del arte y necesitas fichas
+    comparables de cada fuente bibliográfica.
+
+  CONSULTORÍA Y NEGOCIOS
+  → Recibes varios informes de diferentes áreas y necesitas
+    un resumen ejecutivo estructurado de cada uno.
+  → Tienes propuestas de distintos proveedores y quieres
+    extraer y comparar sus elementos clave.
+
+  DERECHO Y CUMPLIMIENTO
+  → Necesitas revisar contratos o regulaciones y extraer
+    cláusulas, fechas y obligaciones específicas.
+  → Tienes expedientes o dictámenes que debes sistematizar.
+
+  EDUCACIÓN
+  → Quieres analizar materiales de un curso y generar
+    fichas de contenido por módulo o tema.
+
+  PERIODISMO E INVESTIGACIÓN DOCUMENTAL
+  → Tienes fuentes primarias (reportes, actas, declaraciones)
+    y necesitas extraer datos verificables de cada una.
+
+  USO CON DOCUMENTOS HUMANOS
+  → Si ya tienes fichas o resúmenes hechos por personas,
+    la herramienta puede compararlos con los documentos
+    originales y proponerte mejoras o complementos,
+    respetando siempre lo que dice la fuente.
+
+
+CÓMO FUNCIONA (EN PALABRAS SIMPLES)
+------------------------------------
+1. Tú le dices de qué tema son los documentos que vas a revisar.
+2. Si ya usaste la herramienta para ese tema antes, te recordará
+   la configuración anterior y te preguntará si la quieres usar.
+3. Si es la primera vez, te hará 5 preguntas sencillas para
+   entender qué información te importa extraer.
+4. A partir de ahí, trabaja sola: lee cada documento, genera
+   borradores, los revisa 3 veces y produce una ficha final.
+5. Si pusiste documentos humanos para comparar, también genera
+   propuestas de mejora automáticamente.
+6. Al terminar, te presenta un resumen de todo lo que hizo.
+
+
+INSTRUCCIONES DE USO PASO A PASO
+----------------------------------
+
+ANTES DE EMPEZAR — LO QUE NECESITAS:
+  - Tener Claude Code instalado (aplicación de escritorio o extensión)
+  - Tener los documentos que quieres revisar (PDF, PPT o Word)
+  - Saber en qué carpeta está guardada esta herramienta en tu computadora
+
+--------------------------------------------------------------
+PASO 1 — Prepara tus documentos
+--------------------------------------------------------------
+  Copia los documentos que quieres revisar dentro de la carpeta:
+
+    Herramienta_Docs > entradas
+
+  Si además tienes documentos hechos por personas (resúmenes,
+  fichas previas, análisis manuales) que quieras comparar,
+  cópialos en la carpeta:
+
+    Herramienta_Docs > evaluacion
+
+  No pongas nada en las otras carpetas. Solo en esas dos.
+
+--------------------------------------------------------------
+PASO 2 — Abre Claude Code
+--------------------------------------------------------------
+  Abre la aplicación Claude Code en tu computadora.
+
+  Si usas la aplicación de escritorio:
+    → Búscala en tus aplicaciones como "Claude Code" y ábrela.
+
+  Si usas la extensión en VS Code o JetBrains:
+    → Abre tu editor y activa el panel de Claude Code.
+
+  Si usas la versión web:
+    → Ve a claude.ai/code en tu navegador.
+
+--------------------------------------------------------------
+PASO 3 — Ubica la herramienta
+--------------------------------------------------------------
+  Necesitas decirle a Claude Code dónde está la carpeta
+  Herramienta_Docs en tu computadora.
+
+  Para encontrar la ruta exacta:
+    En Windows:
+      → Abre la carpeta Herramienta_Docs en el Explorador de archivos
+      → Haz clic en la barra de direcciones (arriba)
+      → Copia el texto que aparece (ejemplo: C:\Users\TuNombre\Documentos\Herramienta_Docs)
+
+    En Mac:
+      → Abre la carpeta en Finder
+      → Haz clic derecho sobre ella mientras presionas la tecla Alt/Opción
+      → Selecciona "Copiar como nombre de ruta"
+
+--------------------------------------------------------------
+PASO 4 — Dale la instrucción a Claude
+--------------------------------------------------------------
+  En la ventana de chat de Claude Code, escribe exactamente esto
+  (reemplazando la ruta con la tuya):
+
+    "Corre la rutina de Herramienta_Docs ubicada en [pega aquí la ruta]"
+
+  Ejemplo real:
+    "Corre la rutina de Herramienta_Docs ubicada en C:\Users\Maria\Documentos\Herramienta_Docs"
+
+  Claude leerá el archivo Orquestador.md y comenzará el proceso.
+
+--------------------------------------------------------------
+PASO 5 — Responde las preguntas de configuración
+--------------------------------------------------------------
+  Claude te hará máximo 2 preguntas antes de trabajar solo:
+
+  Pregunta 1:
+    "¿Cuál es el dominio temático de los documentos que vamos a revisar?"
+    → Responde con el tema general. Ejemplo: "salud pública",
+      "contratos de arrendamiento", "informes financieros 2024"
+
+  Si ya usaste la herramienta para ese tema antes:
+    → Claude te mostrará la configuración guardada y te preguntará
+      si quieres usarla. Responde "sí" o "no".
+
+  Si es la primera vez con ese tema:
+    → Claude te hará 5 preguntas sobre qué información te importa
+      extraer. Respóndelas con la mayor claridad posible.
+      No hay respuestas incorrectas.
+
+  A partir de aquí Claude trabaja solo. No necesitas hacer nada más.
+
+--------------------------------------------------------------
+PASO 6 — Espera y revisa los resultados
+--------------------------------------------------------------
+  Claude procesará todos los documentos de forma autónoma.
+  Dependiendo de cuántos documentos sean, puede tardar algunos minutos.
+
+  Al terminar, te presentará un resumen con:
+    - Las fichas generadas (en la carpeta "salidas")
+    - Las propuestas de comparación, si pusiste documentos en "evaluacion"
+    - Cualquier documento que no haya podido procesar
+
+  Encontrarás los archivos generados en:
+    Herramienta_Docs > salidas        (fichas finales y borradores)
+    Herramienta_Docs > evaluacion > propuestas    (propuestas de mejora)
+
+
+PREGUNTAS FRECUENTES
+---------------------
+¿Puedo usarla para distintos temas?
+  Sí. Cada tema genera su propio archivo de configuración que se
+  guarda en la carpeta "mds". La próxima vez que uses ese mismo
+  tema, Claude lo recordará automáticamente.
+
+¿Qué pasa si pongo un documento que no está relacionado con el tema?
+  Claude lo leerá y te avisará si no puede vincularlo con los
+  otros documentos. No lo procesará sin informarte.
+
+¿Los documentos originales se modifican?
+  No. La herramienta solo lee los documentos de "entradas" y
+  "evaluacion". Nunca los modifica ni los borra.
+
+¿Puedo ver el proceso de revisión, no solo el resultado final?
+  Sí. En la carpeta "salidas" encontrarás también los borradores
+  intermedios llamados "Provisional 1.0" y "Provisional 2.0",
+  que muestran cómo fue evolucionando cada ficha.
+
+¿Qué hago si Claude dice que falta un archivo?
+  Significa que alguno de los archivos de la carpeta "mds" fue
+  movido o eliminado. Verifica que la carpeta "mds" contenga:
+  instrucciones.md, Herramienta_Docs.md y formato.md.
+
+
+ESTRUCTURA DE ARCHIVOS (REFERENCIA)
+-------------------------------------
+  Herramienta_Docs/
+  ├── Orquestador.md         ← el cerebro de la herramienta (no modificar)
+  ├── README.md              ← descripción técnica
+  ├── QUE_ES_ESTA_HERRAMIENTA.txt   ← este archivo
+  ├── entradas/              ← AQUÍ van tus documentos fuente
+  ├── salidas/               ← AQUÍ aparecen las fichas generadas
+  ├── evaluacion/            ← AQUÍ van tus documentos humanos (opcional)
+  │   └── propuestas/        ← AQUÍ aparecen las propuestas generadas
+  └── mds/                   ← archivos del sistema (no modificar)
+      ├── Herramienta_Docs.md
+      ├── instrucciones.md
+      ├── formato.md
+      └── contexto_[tema].md (se genera automáticamente)
+
+
+========================================================
+  Versión 1.0 — Herramienta_Docs
+========================================================

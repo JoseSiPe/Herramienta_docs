@@ -1,0 +1,22 @@
+# Documentos fuente (no versionar contenido sensible)
+entradas/*
+!entradas/.gitkeep
+evaluacion/*.pdf
+evaluacion/*.ppt
+evaluacion/*.pptx
+evaluacion/*.doc
+evaluacion/*.docx
+
+# Contextos generados por sesión (opcional — quitar si quieres versionar los contextos)
+# mds/contexto_*.md
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo

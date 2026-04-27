@@ -1,0 +1,53 @@
+# Herramienta_Docs
+
+Sistema automatizado de revisión sistemática y generación de documentos guiado por instrucciones en formato Markdown.
+
+## ¿Qué hace?
+
+Dado un conjunto de documentos fuente (PDF, PPT, WORD), el agente:
+
+1. Se configura para un dominio temático específico (reutilizable entre sesiones)
+2. Lee cada documento y genera una **Ficha** mediante 3 ciclos iterativos de revisión
+3. Si existen documentos humanos para contrastar, genera **Propuestas** de complemento o modificación
+
+Todo el proceso es autónomo tras una configuración inicial mínima.
+
+## Estructura
+
+```
+Herramienta_Docs/
+├── Orquestador.md        ← punto de entrada para el agente
+├── entradas/             ← depositar aquí los documentos fuente a revisar
+├── salidas/              ← fichas generadas por el agente
+├── evaluacion/           ← documentos humanos para contrastar
+│   └── propuestas/       ← propuestas generadas por el agente
+└── mds/
+    ├── Herramienta_Docs.md   ← núcleo operativo
+    ├── instrucciones.md      ← reglas del proceso y guardrails
+    ├── formato.md            ← plantillas de fichas y propuestas
+    └── contexto_[dominio].md ← generado automáticamente por sesión
+```
+
+## Cómo usar
+
+1. Deposita los documentos a revisar en `entradas/`
+2. (Opcional) Deposita documentos humanos en `evaluacion/` para contraste
+3. Abre una sesión con el agente y escribe:
+
+   > "Corre la rutina de Herramienta_Docs ubicada en [ruta]"
+
+4. El agente te pedirá el dominio temático y, si no existe un contexto previo, te hará 5 preguntas de configuración
+5. A partir de ahí opera de forma autónoma hasta generar el reporte final
+
+## Outputs
+
+| Archivo | Descripción |
+|---|---|
+| `Provisional 1.0 — [Temática].md` | Borrador tras primera lectura |
+| `Provisional 2.0 — [Temática].md` | Borrador tras segunda revisión |
+| `Ficha [Temática].md` | Documento final consolidado |
+| `Propuesta [Temática].md` | Propuesta de complemento/modificación (si aplica) |
+
+## Reutilización por dominio
+
+El archivo `mds/contexto_[dominio].md` se genera la primera vez que se usa un dominio y se reutiliza en sesiones posteriores. El agente mostrará su contenido y preguntará si deseas usarlo o generar uno nuevo.
