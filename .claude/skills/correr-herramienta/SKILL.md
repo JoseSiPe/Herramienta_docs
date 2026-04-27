@@ -1,6 +1,6 @@
 ---
 description: Ejecuta la rutina completa de Herramienta_Docs. Uso: /correr-herramienta
-allowed-tools: Read, Write, Glob
+allowed-tools: Read, Write, Glob, WebSearch, WebFetch
 ---
 
 Lee el archivo `Orquestador.md` en el directorio de trabajo actual y ejecuta la rutina completa definida en él.

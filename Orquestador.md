@@ -93,7 +93,43 @@ Carga también `mds/Herramienta_Docs.md` para las instrucciones operativas de la
 
 Lee todos los documentos presentes en la carpeta `entradas/`.
 
-Si `entradas/` está vacía, informa al usuario y detente.
+**— Si `entradas/` está vacía:**
+
+Pregunta al usuario:
+
+> "No hay documentos en entradas/. ¿Quieres que busque fuentes en internet sobre el dominio '[dominio]'?"
+
+Si el usuario responde **no** → detente e informa.
+
+Si el usuario responde **sí** → ejecuta el **PASO 3.1** antes de continuar.
+
+---
+
+### PASO 3.1 — Búsqueda de fuentes en internet
+
+Usa los términos clave y el objetivo definidos en `mds/contexto_[dominio].md` para buscar fuentes relevantes en internet. Prioriza resultados que sean documentos descargables (PDF, PPT, WORD).
+
+Para cada fuente encontrada, presenta al usuario la siguiente información **antes de descargar nada**:
+
+```
+Fuente encontrada:
+  Título:       [título del documento o página]
+  URL:          [enlace completo]
+  Tipo:         [PDF / PPT / WORD / página web]
+  Descripción: [resumen breve de qué contiene]
+
+¿Deseas descargar este documento? (sí / no / detener búsqueda)
+```
+
+Espera respuesta del usuario para cada fuente antes de continuar con la siguiente.
+
+- **sí** → descarga el archivo y guárdalo en `entradas/` con su nombre original
+- **no** → omite esa fuente y presenta la siguiente
+- **detener búsqueda** → deja de buscar y continúa con los archivos ya descargados en `entradas/`
+
+Si tras la búsqueda `entradas/` sigue vacía (el usuario rechazó todas las fuentes), detente e informa.
+
+---
 
 Para cada documento encontrado:
 

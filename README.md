@@ -69,6 +69,10 @@ Herramienta_Docs/
 | `Ficha [Temática].md` | Documento final consolidado |
 | `Propuesta [Temática].md` | Propuesta de complemento/modificación (si aplica) |
 
+## Aviso legal
+
+El uso de esta herramienta es responsabilidad exclusiva del usuario. Esto incluye los documentos procesados, las fuentes descargadas de internet y los documentos generados. Consulta [`AVISO_LEGAL.txt`](AVISO_LEGAL.txt) para el descargo de responsabilidad completo.
+
 ## Reutilización por dominio
 
 El archivo `mds/contexto_[dominio].md` se genera la primera vez que se usa un dominio y se reutiliza en sesiones posteriores. El agente mostrará su contenido y preguntará si deseas usarlo o generar uno nuevo.

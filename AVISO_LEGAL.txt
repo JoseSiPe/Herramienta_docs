@@ -1,0 +1,86 @@
+========================================================
+  AVISO LEGAL Y DESCARGO DE RESPONSABILIDAD
+  Herramienta_Docs
+========================================================
+
+RESPONSABILIDAD DE USO
+-----------------------
+El uso de Herramienta_Docs es responsabilidad exclusiva de la persona
+que la utiliza. Los autores y colaboradores de esta herramienta no
+asumen ninguna responsabilidad por el uso que se haga de ella, ni por
+las consecuencias derivadas de dicho uso.
+
+
+SOBRE LOS DOCUMENTOS PROCESADOS
+---------------------------------
+El usuario es el único responsable de:
+
+  - Verificar que tiene los derechos, licencias o permisos necesarios
+    para procesar, analizar y reproducir el contenido de los documentos
+    que introduce en la herramienta.
+
+  - Asegurarse de que el uso de dichos documentos cumple con las leyes
+    de propiedad intelectual, derechos de autor y protección de datos
+    aplicables en su jurisdicción.
+
+  - Determinar si los documentos contienen información confidencial,
+    sensible o protegida antes de procesarlos con cualquier herramienta
+    de inteligencia artificial.
+
+
+SOBRE LA BÚSQUEDA Y DESCARGA DE FUENTES EN INTERNET
+-----------------------------------------------------
+Cuando el usuario activa la función de búsqueda de fuentes en internet,
+es su responsabilidad exclusiva:
+
+  - Revisar cada URL presentada por el agente antes de autorizar
+    su descarga.
+
+  - Verificar la legitimidad, seguridad y legalidad de los sitios
+    web y archivos antes de descargarlos.
+
+  - Asegurarse de que la descarga y uso de cada archivo respeta los
+    términos de uso del sitio de origen y las leyes de propiedad
+    intelectual aplicables.
+
+  - Evaluar si el contenido descargado es apropiado para los fines
+    de su revisión.
+
+El agente presenta los enlaces para que el usuario pueda consultarlos
+antes de decidir. La decisión de descargar cualquier archivo es
+siempre del usuario, nunca automática.
+
+
+SOBRE LOS DOCUMENTOS GENERADOS
+--------------------------------
+Los documentos generados por esta herramienta (fichas, propuestas,
+provisionales) son síntesis automatizadas basadas en el contenido
+de los documentos fuente. El usuario es responsable de:
+
+  - Verificar la exactitud e integridad de los documentos generados
+    antes de utilizarlos para cualquier fin profesional, académico
+    o legal.
+
+  - No utilizar los documentos generados como sustituto de asesoría
+    profesional especializada (legal, médica, financiera, etc.).
+
+
+SOBRE EL MODELO DE INTELIGENCIA ARTIFICIAL
+-------------------------------------------
+Esta herramienta opera mediante instrucciones que guían a un modelo
+de inteligencia artificial (Claude, de Anthropic). El comportamiento
+del modelo está sujeto a los términos de uso y políticas de Anthropic.
+El usuario acepta dichos términos al utilizar Claude Code.
+
+Para más información: https://www.anthropic.com/legal/usage-policy
+
+
+ACEPTACIÓN
+----------
+El uso de esta herramienta implica la aceptación de los términos
+descritos en este documento. Si no está de acuerdo con alguno de
+estos términos, no utilice la herramienta.
+
+========================================================
+  Herramienta_Docs — Versión 1.0
+========================================================
