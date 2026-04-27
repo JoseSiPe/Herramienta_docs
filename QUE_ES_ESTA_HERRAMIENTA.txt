@@ -203,8 +203,9 @@ PASO 6 — Espera y revisa los resultados
     - Cualquier documento que no haya podido procesar
 
   Encontrarás los archivos generados en:
-    Herramienta_Docs > salidas        (fichas finales y borradores)
-    Herramienta_Docs > evaluacion > propuestas    (propuestas de mejora)
+    Herramienta_Docs > salidas > fichas          (fichas finales)
+    Herramienta_Docs > salidas > provisionales   (borradores del proceso)
+    Herramienta_Docs > evaluacion > propuestas   (propuestas de mejora)
 
 
 SKILLS (COMANDOS RÁPIDOS)
@@ -252,9 +253,10 @@ PREGUNTAS FRECUENTES
   "evaluacion". Nunca los modifica ni los borra.
 
 ¿Puedo ver el proceso de revisión, no solo el resultado final?
-  Sí. En la carpeta "salidas" encontrarás también los borradores
-  intermedios llamados "Provisional 1.0" y "Provisional 2.0",
-  que muestran cómo fue evolucionando cada ficha.
+  Sí. En la carpeta "salidas > provisionales" encontrarás los borradores
+  intermedios "Provisional 1.0" y "Provisional 2.0", que muestran
+  cómo fue evolucionando cada ficha. Las fichas finales están en
+  "salidas > fichas".
 
 ¿Qué hago si Claude dice que falta un archivo?
   Significa que alguno de los archivos de la carpeta "mds" fue
@@ -270,7 +272,9 @@ ESTRUCTURA DE ARCHIVOS (REFERENCIA)
   ├── QUE_ES_ESTA_HERRAMIENTA.txt   ← este archivo
   ├── AVISO_LEGAL.txt        ← leer antes de usar la herramienta
   ├── entradas/              ← AQUÍ van tus documentos fuente
-  ├── salidas/               ← AQUÍ aparecen las fichas generadas
+  ├── salidas/
+  │   ├── fichas/            ← AQUÍ aparecen las fichas finales
+  │   └── provisionales/     ← AQUÍ aparecen los borradores del proceso
   ├── evaluacion/            ← AQUÍ van tus documentos humanos (opcional)
   │   └── propuestas/        ← AQUÍ aparecen las propuestas generadas
   ├── mds/                   ← archivos del sistema (no modificar)
@@ -286,5 +290,5 @@ ESTRUCTURA DE ARCHIVOS (REFERENCIA)
 
 
 ========================================================
-  Versión 1.01 — Herramienta_Docs
+  Versión 1.02 — Herramienta_Docs
 ========================================================

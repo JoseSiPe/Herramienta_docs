@@ -19,7 +19,9 @@ Herramienta_Docs/
 ├── Orquestador.md        ← punto de entrada para el agente
 ├── AVISO_LEGAL.txt       ← descargo de responsabilidad
 ├── entradas/             ← depositar aquí los documentos fuente a revisar
-├── salidas/              ← fichas generadas por el agente
+├── salidas/
+│   ├── fichas/           ← fichas finales generadas por el agente
+│   └── provisionales/    ← borradores iterativos (Provisional 1.0, 2.0)
 ├── evaluacion/           ← documentos humanos para contrastar
 │   └── propuestas/       ← propuestas generadas por el agente
 ├── mds/
@@ -65,10 +67,10 @@ Herramienta_Docs/
 
 | Archivo | Descripción |
 |---|---|
-| `Provisional 1.0 — [Temática].md` | Borrador tras primera lectura |
-| `Provisional 2.0 — [Temática].md` | Borrador tras segunda revisión |
-| `Ficha [Temática].md` | Documento final consolidado |
-| `Propuesta [Temática].md` | Propuesta de complemento/modificación (si aplica) |
+| `salidas/fichas/Ficha [Temática].md` | Documento final consolidado |
+| `salidas/provisionales/Provisional 1.0 — [Temática].md` | Borrador tras primera lectura |
+| `salidas/provisionales/Provisional 2.0 — [Temática].md` | Borrador tras segunda revisión |
+| `evaluacion/propuestas/Propuesta [Temática].md` | Propuesta de complemento/modificación (si aplica) |
 
 ## Aviso legal
 

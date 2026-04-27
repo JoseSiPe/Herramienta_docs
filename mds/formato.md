@@ -64,6 +64,15 @@ y cualquier ambigüedad detectada durante la evaluación.]
 
 ---
 
+## Ubicación de archivos de salida
+
+- Fichas finales → `salidas/fichas/Ficha [Temática].md`
+- Provisionales → `salidas/provisionales/Provisional X.0 — [Temática].md`
+- Propuestas finales → `evaluacion/propuestas/Propuesta [Temática].md`
+- Provisionales de propuestas → `evaluacion/propuestas/Provisional X.0 — Propuesta [Temática].md`
+
+---
+
 ## Estructura de Provisional X.0
 
 Los provisionales siguen la misma estructura que la ficha o propuesta final

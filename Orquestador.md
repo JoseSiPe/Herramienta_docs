@@ -17,7 +17,14 @@ Formula esta única pregunta antes de cualquier acción:
 
 > "¿Cuál es el dominio temático de los documentos que vamos a revisar en esta sesión?"
 
-Usa la respuesta para construir el nombre del archivo de contexto: `mds/contexto_[dominio].md`
+**Normalización del nombre de dominio:** con la respuesta del usuario, aplica estas reglas para construir el nombre del archivo de contexto:
+- Convertir a minúsculas
+- Reemplazar espacios con guiones
+- Sustituir caracteres acentuados: á→a, é→e, í→i, ó→o, ú→u, ñ→n, ü→u
+- Eliminar cualquier otro carácter especial
+- Ejemplo: "Estimación para Áreas Pequeñas" → `estimacion-areas-pequenas`
+
+Nombre del archivo resultante: `mds/contexto_[dominio-normalizado].md`
 
 ### 1.2 Verificación de existencia del contexto
 
@@ -131,15 +138,30 @@ Si tras la búsqueda `entradas/` sigue vacía (el usuario rechazó todas las fue
 
 ---
 
-Para cada documento encontrado:
+Para cada documento encontrado, sigue este proceso:
+
+**— Paso previo: detección de ficha existente**
+
+Realiza una lectura inicial rápida del documento para determinar su temática (`[Temática]`). Luego verifica si existe el archivo `salidas/fichas/Ficha [Temática].md`.
+
+- **Si NO existe** → procede normalmente con los 3 ciclos
+- **Si YA EXISTE** → informa al usuario y espera instrucción:
+
+  > "Ya existe una ficha para '[Temática]'. ¿Qué deseas hacer?"
+  > 1. **Actualizar** — re-procesa el documento y sobreescribe la ficha y provisionales existentes
+  > 2. **Saltar** — omite este documento y pasa al siguiente
+  > 3. **Conservar ambas** — genera la nueva ficha con sufijo `_v2` sin eliminar la anterior
+
+**— Ciclos iterativos (si procede):**
 
 1. Aplica los 3 ciclos iterativos definidos en `mds/instrucciones.md`
-2. Guarda en `salidas/`:
+2. Guarda los provisionales en `salidas/provisionales/`:
    - `Provisional 1.0 — [Temática].md`
    - `Provisional 2.0 — [Temática].md`
+3. Guarda la ficha final en `salidas/fichas/`:
    - `Ficha [Temática].md`
-3. El título `[Temática]` debe derivarse del contenido del documento fuente
-4. Aplica en todo momento la estructura definida en `mds/formato.md`
+4. El título `[Temática]` debe derivarse del contenido del documento fuente
+5. Aplica en todo momento la estructura definida en `mds/formato.md`
 
 Procesa todos los documentos de `entradas/` antes de continuar al siguiente paso.
 
@@ -164,11 +186,11 @@ Ejecuta el proceso de evaluación para cada documento encontrado.
 Para cada documento en `evaluacion/`:
 
 **Intento 1 — Coincidencia por título idéntico:**
-Busca en `salidas/` una `Ficha [Temática].md` cuyo título coincida exactamente.
+Busca en `salidas/fichas/` una `Ficha [Temática].md` cuyo título coincida exactamente.
 
 **Intento 2 — Coincidencia por contenido (si el título no coincide):**
 1. Lee el documento humano completo
-2. Lee todas las fichas disponibles en `salidas/`
+2. Lee todas las fichas disponibles en `salidas/fichas/`
 3. Determina si el documento humano es temáticamente relacionado con alguna ficha
 4. Informa al usuario el resultado:
    - Si relacionado: *"Vinculé '[doc humano]' con 'Ficha [X]' por coincidencia de contenido"*
@@ -180,7 +202,7 @@ Busca en `salidas/` una `Ficha [Temática].md` cuyo título coincida exactamente
 
 Para cada vínculo establecido, aplica los 3 ciclos iterativos de `mds/instrucciones.md` usando como fuentes:
 - El documento humano de `evaluacion/`
-- La `Ficha [Temática].md` correspondiente de `salidas/`
+- La `Ficha [Temática].md` correspondiente de `salidas/fichas/`
 
 El objetivo de cada ciclo es identificar elementos para complementar o modificar la ficha, respetando la metodología definida en `mds/instrucciones.md` y los parámetros de `mds/contexto_[dominio].md`.
 
@@ -215,7 +237,7 @@ Documentos en evaluacion/ omitidos:
 
 ## REGLAS GENERALES DEL AGENTE
 
-- Tras el PASO 1, opera de forma autónoma. Las únicas excepciones donde se permite interacción adicional con el usuario son: (a) PASO 3.1 cuando `entradas/` está vacía y se requiere autorización por cada descarga de internet, y (b) cualquier situación de error no resuelta
+- Tras el PASO 1, opera de forma autónoma. Las únicas excepciones donde se permite interacción adicional con el usuario son: (a) PASO 3.1 cuando `entradas/` está vacía y se requiere autorización por cada descarga de internet, (b) detección de ficha existente en PASO 3 que requiere instrucción del usuario, y (c) cualquier situación de error no resuelta
 - No tomes decisiones sobre dominio o contexto sin confirmación del usuario en el PASO 1
 - No generes contenido inferido o externo a los documentos fuente
 - Conserva todos los provisionales como registro del proceso

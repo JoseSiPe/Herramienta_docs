@@ -10,8 +10,11 @@ evaluacion/*.doc
 evaluacion/*.docx
 
 # Outputs generados por uso de la herramienta (no versionar)
-salidas/*
-!salidas/.gitkeep
+salidas/*.md
+salidas/fichas/*
+!salidas/fichas/.gitkeep
+salidas/provisionales/*
+!salidas/provisionales/.gitkeep
 evaluacion/propuestas/*
 !evaluacion/propuestas/.gitkeep
 

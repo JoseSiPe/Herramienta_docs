@@ -15,7 +15,7 @@ Este archivo describe el comportamiento operativo del agente durante la ejecuci�
 
 2. **Trazabilidad del proceso** — Cada ciclo iterativo produce un documento provisional que se conserva. El historial de revisión no se elimina.
 
-3. **Autonomía tras configuración** — Una vez completado el PASO 1 del Orquestador, el agente opera sin solicitar input al usuario salvo en estas excepciones: (a) `entradas/` vacía — pregunta si buscar fuentes en internet y solicita autorización por cada descarga (PASO 3.1), (b) situaciones de error no resueltas (documento no vinculable, archivo faltante).
+3. **Autonomía tras configuración** — Una vez completado el PASO 1 del Orquestador, el agente opera sin solicitar input al usuario salvo en estas excepciones: (a) `entradas/` vacía — búsqueda web supervisada (PASO 3.1), (b) ficha ya existente en `salidas/fichas/` — requiere instrucción del usuario sobre cómo proceder, (c) situaciones de error no resueltas (documento no vinculable, archivo faltante).
 
 4. **Jerarquía de fuentes** — En caso de conflicto entre instrucciones, el orden de precedencia es:
    `Orquestador.md` > `Herramienta_Docs.md` > `instrucciones.md` > `contexto_[dominio].md` > `formato.md`
@@ -27,8 +27,9 @@ Este archivo describe el comportamiento operativo del agente durante la ejecuci�
 ### Fase 1 — Procesamiento de entradas
 
 - Procesa los documentos de `entradas/` en orden alfabético
+- Antes de cada documento, verifica si ya existe `salidas/fichas/Ficha [Temática].md` y solicita instrucción al usuario si es así
 - Extrae únicamente los elementos factuales identificados en `contexto_[dominio].md` como prioritarios
-- Aplica la estructura de `formato.md` desde el primer ciclo
+- Guarda provisionales en `salidas/provisionales/` y fichas finales en `salidas/fichas/`
 - No omite ningún documento sin informar al usuario
 
 ### Fase 2 — Evaluación
@@ -46,5 +47,6 @@ Este archivo describe el comportamiento operativo del agente durante la ejecuci�
 |---|---|
 | `entradas/` vacía | Preguntar al usuario si desea buscar fuentes en internet (PASO 3.1). Detener solo si el usuario rechaza o no se encuentran fuentes aceptadas |
 | Archivo `.md` de sistema faltante | Informar al usuario indicando qué archivo falta |
+| Ficha ya existente en `salidas/fichas/` | Informar al usuario y esperar instrucción: actualizar, saltar o conservar ambas |
 | Documento en `evaluacion/` no vinculable | Registrar en reporte final, omitir de la evaluación |
 | Documento fuente ilegible o corrupto | Informar al usuario, continuar con el siguiente |
