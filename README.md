@@ -37,15 +37,15 @@ Herramienta_Docs/
 
 1. Deposita los documentos a revisar en `entradas/`
 2. (Opcional) Deposita documentos humanos en `evaluacion/` para contraste
-3. Abre una sesión con el agente y usa el skill:
+3. Inicia Claude Code desde dentro de la carpeta `Herramienta_Docs` y ejecuta:
 
    ```
-   /correr-herramienta [ruta a Herramienta_Docs]
+   /correr-herramienta
    ```
 
-   O si no tienes los skills disponibles, escribe:
+   O si prefieres sin skills:
 
-   > "Corre la rutina de Herramienta_Docs ubicada en [ruta]"
+   > "Lee el Orquestador.md y ejecuta la rutina"
 
 4. El agente te pedirá el dominio temático y, si no existe un contexto previo, te hará 5 preguntas de configuración
 5. A partir de ahí opera de forma autónoma hasta generar el reporte final
@@ -54,9 +54,11 @@ Herramienta_Docs/
 
 | Skill | Descripción |
 |---|---|
-| `/correr-herramienta [ruta]` | Ejecuta la rutina completa de principio a fin |
-| `/nuevo-dominio [ruta]` | Crea un contexto de dominio nuevo sin ejecutar la rutina |
-| `/estado-docs [ruta]` | Muestra qué hay en cada carpeta sin procesar nada |
+| `/correr-herramienta` | Ejecuta la rutina completa de principio a fin |
+| `/nuevo-dominio` | Crea un contexto de dominio nuevo sin ejecutar la rutina |
+| `/estado-docs` | Muestra qué hay en cada carpeta sin procesar nada |
+
+> Los skills usan el directorio de trabajo actual. Claude Code debe iniciarse desde dentro de `Herramienta_Docs`.
 
 ## Outputs
 

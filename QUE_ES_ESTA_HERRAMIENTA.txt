@@ -138,17 +138,17 @@ PASO 3 — Ubica la herramienta
 PASO 4 — Dale la instrucción a Claude
 --------------------------------------------------------------
   OPCIÓN A — Usando el skill (recomendado):
-  Si tienes Claude Code con acceso a esta carpeta, escribe:
+  Escribe simplemente:
 
-    /correr-herramienta [pega aquí la ruta]
+    /correr-herramienta
 
-  Ejemplo real:
-    /correr-herramienta C:\Users\Maria\Documentos\Herramienta_Docs
+  Eso es todo. Claude ejecutará la rutina completa desde la carpeta
+  donde se inició.
 
   OPCIÓN B — Instrucción manual:
   Si no reconoce el skill, escribe esto en el chat:
 
-    "Corre la rutina de Herramienta_Docs ubicada en [pega aquí la ruta]"
+    "Lee el Orquestador.md y ejecuta la rutina"
 
   En ambos casos, Claude leerá el Orquestador.md y comenzará el proceso.
 
@@ -195,22 +195,22 @@ Los skills son atajos que puedes escribir directamente en Claude Code
 para ejecutar funciones específicas de la herramienta sin tener que
 escribir instrucciones largas.
 
-  /correr-herramienta [ruta]
+  /correr-herramienta
     Ejecuta el proceso completo: lee los documentos de "entradas",
     genera las fichas y, si hay documentos en "evaluacion", genera
     las propuestas de contraste.
-    Ejemplo: /correr-herramienta C:\Users\Maria\Documentos\Herramienta_Docs
 
-  /nuevo-dominio [ruta]
+  /nuevo-dominio
     Crea una configuración nueva para un dominio temático, incluso si
     ya existe una configuración anterior para ese dominio. Útil cuando
     quieres redefinir qué información extraer sin correr todo el proceso.
-    Ejemplo: /nuevo-dominio C:\Users\Maria\Documentos\Herramienta_Docs
 
-  /estado-docs [ruta]
+  /estado-docs
     Muestra un resumen de qué documentos hay en cada carpeta sin
     procesar nada. Útil para verificar antes de lanzar la rutina.
-    Ejemplo: /estado-docs C:\Users\Maria\Documentos\Herramienta_Docs
+
+  IMPORTANTE: para que los skills funcionen, Claude Code debe iniciarse
+  desde dentro de la carpeta Herramienta_Docs (ver PASO 2).
 
 
 PREGUNTAS FRECUENTES
