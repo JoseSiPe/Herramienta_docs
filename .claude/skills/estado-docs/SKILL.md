@@ -25,7 +25,7 @@ EVALUACIÓN (evaluacion/)
   Propuestas generadas (evaluacion/propuestas/):
   - [lista de Propuesta *.md o "Ninguno"]
 
-CONTEXTOS CONFIGURADOS (mds/)
+CONTEXTOS CONFIGURADOS (mds/Contexto/)
   - [lista de contexto_*.md o "Ningún dominio configurado aún"]
 ```
 

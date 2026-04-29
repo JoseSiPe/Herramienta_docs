@@ -24,13 +24,13 @@ Formula esta única pregunta antes de cualquier acción:
 - Eliminar cualquier otro carácter especial
 - Ejemplo: "Estimación para Áreas Pequeñas" → `estimacion-areas-pequenas`
 
-Nombre del archivo resultante: `mds/contexto_[dominio-normalizado].md`
+Nombre del archivo resultante: `mds/Contexto/contexto_[dominio-normalizado].md`
 
 ### 1.2 Verificación de existencia del contexto
 
-Busca si existe `mds/contexto_[dominio].md`.
+Busca si existe `mds/Contexto/contexto_[dominio].md`.
 
-**— Si el archivo EXISTE:**
+**— Si el archivo EXISTE (coincidencia exacta):**
 
 1. Lee su contenido completo
 2. Preséntalo al usuario:
@@ -41,7 +41,31 @@ Busca si existe `mds/contexto_[dominio].md`.
    - Confirma usarlo → continúa al **PASO 2**
    - Solicita uno nuevo → ejecuta **PASO 1.3** y sobreescribe el archivo
 
-**— Si el archivo NO EXISTE:**
+**— Si el archivo NO EXISTE (búsqueda semántica):**
+
+Antes de concluir que no hay contexto previo, realiza una búsqueda semántica:
+
+1. Lista todos los archivos `mds/contexto_*.md` existentes
+2. Para cada uno, lee su título y sección "Términos clave y conceptos centrales"
+3. Evalúa si alguno es temáticamente afín a lo que el usuario describió, considerando:
+   - Sinónimos, hipónimos e hiperónimos del dominio indicado
+   - Solapamiento de términos clave o área disciplinar
+   - Campo semántico compartido aunque la denominación exacta difiera
+
+**— Si se encuentra uno o más contextos afines:**
+
+Preséntalo al usuario:
+> "No encontré un contexto con ese nombre exacto, pero encontré uno relacionado:"
+> **[nombre del archivo]**
+> [contenido del archivo]
+> "¿Ejecutamos la sesión con este contexto, deseas generar uno nuevo, o prefieres renombrarlo a '[dominio]'?"
+
+Espera respuesta:
+- Usar el existente → continúa al **PASO 2** con ese archivo de contexto
+- Generar uno nuevo → ejecuta **PASO 1.3** con el nombre normalizado del dominio actual
+- Renombrar → copia el contenido al nuevo archivo `mds/Contexto/contexto_[dominio].md` y continúa al **PASO 2**
+
+**— Si no existe ningún contexto afín:**
 
 > "No encontré un contexto previo para este dominio. Voy a hacerte algunas preguntas para configurarlo."
 
@@ -59,7 +83,7 @@ Formula las siguientes preguntas **una a la vez**, esperando respuesta antes de 
 4. ¿Qué **tipos de documentos** se revisarán? *(PDF, PPT, WORD u otros)*
 5. ¿Hay alguna **restricción o criterio de exclusión** que el agente deba considerar?
 
-Con las respuestas, genera y guarda `mds/contexto_[dominio].md` usando esta plantilla:
+Con las respuestas, genera y guarda `mds/Contexto/contexto_[dominio].md` usando esta plantilla:
 
 ```
 # Contexto: [Dominio]
@@ -87,7 +111,7 @@ Con las respuestas, genera y guarda `mds/contexto_[dominio].md` usando esta plan
 Carga los siguientes archivos en este orden:
 
 1. `mds/instrucciones.md`
-2. `mds/contexto_[dominio].md`
+2. `mds/Contexto/contexto_[dominio].md`
 3. `mds/formato.md`
 
 Si alguno no existe, detente e informa al usuario cuál falta antes de continuar.
@@ -114,7 +138,7 @@ Si el usuario responde **sí** → ejecuta el **PASO 3.1** antes de continuar.
 
 ### PASO 3.1 — Búsqueda de fuentes en internet
 
-Usa los términos clave y el objetivo definidos en `mds/contexto_[dominio].md` para buscar fuentes relevantes en internet. Prioriza resultados que sean documentos descargables (PDF, PPT, WORD).
+Usa los términos clave y el objetivo definidos en `mds/Contexto/contexto_[dominio].md` para buscar fuentes relevantes en internet. Prioriza resultados que sean documentos descargables (PDF, PPT, WORD).
 
 Para cada fuente encontrada, presenta al usuario la siguiente información **antes de descargar nada**:
 
@@ -204,7 +228,7 @@ Para cada vínculo establecido, aplica los 3 ciclos iterativos de `mds/instrucci
 - El documento humano de `evaluacion/`
 - La `Ficha [Temática].md` correspondiente de `salidas/fichas/`
 
-El objetivo de cada ciclo es identificar elementos para complementar o modificar la ficha, respetando la metodología definida en `mds/instrucciones.md` y los parámetros de `mds/contexto_[dominio].md`.
+El objetivo de cada ciclo es identificar elementos para complementar o modificar la ficha, respetando la metodología definida en `mds/instrucciones.md` y los parámetros de `mds/Contexto/contexto_[dominio].md`.
 
 Guarda en `evaluacion/propuestas/`:
 - `Provisional 1.0 — Propuesta [Temática].md`
@@ -237,6 +261,7 @@ Documentos en evaluacion/ omitidos:
 
 ## REGLAS GENERALES DEL AGENTE
 
+- **Rutas de salida estrictas:** los únicos destinos válidos para guardar archivos son `salidas/fichas/`, `salidas/provisionales/`, `salidas/docx/`, `evaluacion/propuestas/` y `mds/Contexto/`. Nunca guardes archivos directamente en `salidas/` ni en `mds/`
 - Tras el PASO 1, opera de forma autónoma. Las únicas excepciones donde se permite interacción adicional con el usuario son: (a) PASO 3.1 cuando `entradas/` está vacía y se requiere autorización por cada descarga de internet, (b) detección de ficha existente en PASO 3 que requiere instrucción del usuario, y (c) cualquier situación de error no resuelta
 - No tomes decisiones sobre dominio o contexto sin confirmación del usuario en el PASO 1
 - No generes contenido inferido o externo a los documentos fuente

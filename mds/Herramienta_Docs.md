@@ -29,7 +29,7 @@ Este archivo describe el comportamiento operativo del agente durante la ejecuci�
 - Procesa los documentos de `entradas/` en orden alfabético
 - Antes de cada documento, verifica si ya existe `salidas/fichas/Ficha [Temática].md` y solicita instrucción al usuario si es así
 - Extrae únicamente los elementos factuales identificados en `contexto_[dominio].md` como prioritarios
-- Guarda provisionales en `salidas/provisionales/` y fichas finales en `salidas/fichas/`
+- Guarda provisionales **exclusivamente** en `salidas/provisionales/` y fichas finales **exclusivamente** en `salidas/fichas/`. Nunca guardes archivos directamente en `salidas/`
 - No omite ningún documento sin informar al usuario
 
 ### Fase 2 — Evaluación

@@ -15,11 +15,14 @@ salidas/fichas/*
 !salidas/fichas/.gitkeep
 salidas/provisionales/*
 !salidas/provisionales/.gitkeep
+salidas/docx/*
+!salidas/docx/.gitkeep
 evaluacion/propuestas/*
 !evaluacion/propuestas/.gitkeep
 
 # Contextos generados por sesión (no versionar)
-mds/contexto_*.md
+mds/Contexto/*
+!mds/Contexto/.gitkeep
 
 # Sistema operativo
 .DS_Store
