@@ -1,11 +1,11 @@
 ========================================================
   AVISO LEGAL Y DESCARGO DE RESPONSABILIDAD
-  Herramienta_Docs
+  Archon
 ========================================================
 
 RESPONSABILIDAD DE USO
 -----------------------
-El uso de Herramienta_Docs es responsabilidad exclusiva de la persona
+El uso de Archon es responsabilidad exclusiva de la persona
 que la utiliza. Los autores y colaboradores de esta herramienta no
 asumen ninguna responsabilidad por el uso que se haga de ella, ni por
 las consecuencias derivadas de dicho uso.
@@ -82,5 +82,5 @@ descritos en este documento. Si no está de acuerdo con alguno de
 estos términos, no utilice la herramienta.
 
 ========================================================
-  Herramienta_Docs — Versión 1.02
+  Archon — Versión 1.03
 ========================================================

@@ -116,7 +116,7 @@ Carga los siguientes archivos en este orden:
 
 Si alguno no existe, detente e informa al usuario cuál falta antes de continuar.
 
-Carga también `mds/Herramienta_Docs.md` para las instrucciones operativas de las fases siguientes.
+Carga también `mds/Archon.md` para las instrucciones operativas de las fases siguientes.
 
 ---
 

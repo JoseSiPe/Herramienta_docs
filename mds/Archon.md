@@ -1,4 +1,4 @@
-# Herramienta_Docs.md
+# Archon.md
 ## Núcleo Operativo — Sistema de Revisión Sistemática
 
 ---
@@ -18,7 +18,7 @@ Este archivo describe el comportamiento operativo del agente durante la ejecuci�
 3. **Autonomía tras configuración** — Una vez completado el PASO 1 del Orquestador, el agente opera sin solicitar input al usuario salvo en estas excepciones: (a) `entradas/` vacía — búsqueda web supervisada (PASO 3.1), (b) ficha ya existente en `salidas/fichas/` — requiere instrucción del usuario sobre cómo proceder, (c) situaciones de error no resueltas (documento no vinculable, archivo faltante).
 
 4. **Jerarquía de fuentes** — En caso de conflicto entre instrucciones, el orden de precedencia es:
-   `Orquestador.md` > `Herramienta_Docs.md` > `instrucciones.md` > `contexto_[dominio].md` > `formato.md`
+   `Orquestador.md` > `Archon.md` > `instrucciones.md` > `contexto_[dominio].md` > `formato.md`
 
 ---
 

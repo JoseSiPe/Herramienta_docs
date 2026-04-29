@@ -1,9 +1,9 @@
 ---
-description: Elimina todos los documentos generados por el uso de Herramienta_Docs, dejando solo los archivos fundacionales. Uso: /reset-herramienta
+description: Elimina todos los documentos generados por el uso de Archon, dejando solo los archivos fundacionales. Uso: /reset-herramienta
 allowed-tools: Glob, Bash, Read
 ---
 
-Ejecuta un reseteo completo de Herramienta_Docs eliminando todos los documentos generados durante el uso de la herramienta.
+Ejecuta un reseteo completo de Archon eliminando todos los documentos generados durante el uso de la herramienta.
 
 ## Paso 1 — Inventario
 

@@ -1,10 +1,10 @@
 ========================================================
-  HERRAMIENTA_DOCS — GUÍA COMPLETA PARA EL USUARIO
+  ARCHON — GUÍA COMPLETA PARA EL USUARIO
 ========================================================
 
-¿QUÉ ES ESTA HERRAMIENTA?
---------------------------
-Herramienta_Docs es un asistente automatizado de lectura y síntesis de documentos
+¿QUÉ ES ARCHON?
+---------------
+Archon es un asistente automatizado de lectura y síntesis de documentos
 que funciona dentro de Claude Code (la inteligencia artificial de Anthropic).
 
 En términos simples: tú le das documentos (PDFs, presentaciones de PowerPoint o
@@ -22,14 +22,14 @@ Sirve para hacer lo que se conoce como una "revisión sistemática de documentos
 leer una colección de textos sobre un mismo tema, extraer la información relevante
 de cada uno y organizarla de forma consistente y comparable.
 
-Lo que normalmente tomaría horas de lectura y resumen manual, esta herramienta
+Lo que normalmente tomaría horas de lectura y resumen manual, Archon
 lo hace de forma ordenada, trazable y repetible. Siempre siguiendo el mismo método,
 sin importar cuántos documentos sean.
 
 
 CASOS DE USO
 ------------
-Esta herramienta es útil en cualquier situación donde necesites revisar
+Archon es útil en cualquier situación donde necesites revisar
 varios documentos sobre un mismo tema y quieras tener fichas organizadas de cada uno.
 
 Algunos ejemplos concretos:
@@ -61,7 +61,7 @@ Algunos ejemplos concretos:
 
   USO CON DOCUMENTOS HUMANOS
   → Si ya tienes fichas o resúmenes hechos por personas,
-    la herramienta puede compararlos con los documentos
+    Archon puede compararlos con los documentos
     originales y proponerte mejoras o complementos,
     respetando siempre lo que dice la fuente.
 
@@ -69,8 +69,10 @@ Algunos ejemplos concretos:
 CÓMO FUNCIONA (EN PALABRAS SIMPLES)
 ------------------------------------
 1. Tú le dices de qué tema son los documentos que vas a revisar.
-2. Si ya usaste la herramienta para ese tema antes, te recordará
+2. Si ya usaste Archon para ese tema antes, te recordará
    la configuración anterior y te preguntará si la quieres usar.
+   Si describes el tema de forma diferente pero el contenido es similar,
+   Archon lo detectará automáticamente y te propondrá el contexto relacionado.
 3. Si es la primera vez, te hará 5 preguntas sencillas para
    entender qué información te importa extraer.
 4. Si no hay documentos en la carpeta de entradas, te preguntará
@@ -90,16 +92,16 @@ INSTRUCCIONES DE USO PASO A PASO
 ANTES DE EMPEZAR — LO QUE NECESITAS:
   - Tener Claude Code instalado (aplicación de escritorio o extensión)
   - Tener los documentos que quieres revisar (PDF, PPT o Word)
-  - Saber en qué carpeta está guardada esta herramienta en tu computadora
+  - Saber en qué carpeta está guardada Archon en tu computadora
 
 --------------------------------------------------------------
 PASO 1 — Prepara tus documentos
 --------------------------------------------------------------
   Copia los documentos que quieres revisar dentro de la carpeta:
 
-    Herramienta_Docs > entradas
+    Archon > entradas
 
-  Si todavía no tienes documentos, no te preocupes. La herramienta
+  Si todavía no tienes documentos, no te preocupes. Archon
   detectará que la carpeta está vacía y te ofrecerá buscar fuentes
   en internet automáticamente (ver PASO 5).
 
@@ -107,7 +109,7 @@ PASO 1 — Prepara tus documentos
   fichas previas, análisis manuales) que quieras comparar,
   cópialos en la carpeta:
 
-    Herramienta_Docs > evaluacion
+    Archon > evaluacion
 
   No pongas nada en las otras carpetas. Solo en esas dos.
 
@@ -129,13 +131,13 @@ PASO 2 — Abre Claude Code
 PASO 3 — Ubica la herramienta
 --------------------------------------------------------------
   Necesitas decirle a Claude Code dónde está la carpeta
-  Herramienta_Docs en tu computadora.
+  Archon en tu computadora.
 
   Para encontrar la ruta exacta:
     En Windows:
-      → Abre la carpeta Herramienta_Docs en el Explorador de archivos
+      → Abre la carpeta Archon en el Explorador de archivos
       → Haz clic en la barra de direcciones (arriba)
-      → Copia el texto que aparece (ejemplo: C:\Users\TuNombre\Documentos\Herramienta_Docs)
+      → Copia el texto que aparece (ejemplo: C:\Users\TuNombre\Documentos\Archon)
 
     En Mac:
       → Abre la carpeta en Finder
@@ -169,9 +171,12 @@ PASO 5 — Responde las preguntas de configuración
     → Responde con el tema general. Ejemplo: "salud pública",
       "contratos de arrendamiento", "informes financieros 2024"
 
-  Si ya usaste la herramienta para ese tema antes:
+  Si ya usaste Archon para ese tema antes:
     → Claude te mostrará la configuración guardada y te preguntará
       si quieres usarla. Responde "sí" o "no".
+
+  Si describes el tema de forma diferente pero es el mismo campo:
+    → Claude detectará el contexto relacionado y te lo propondrá.
 
   Si es la primera vez con ese tema:
     → Claude te hará 5 preguntas sobre qué información te importa
@@ -198,21 +203,21 @@ PASO 6 — Espera y revisa los resultados
   Dependiendo de cuántos documentos sean, puede tardar algunos minutos.
 
   Al terminar, te presentará un resumen con:
-    - Las fichas generadas (en la carpeta "salidas")
+    - Las fichas generadas (en la carpeta "salidas/fichas")
     - Las propuestas de comparación, si pusiste documentos en "evaluacion"
     - Cualquier documento que no haya podido procesar
 
   Encontrarás los archivos generados en:
-    Herramienta_Docs > salidas > fichas          (fichas finales)
-    Herramienta_Docs > salidas > provisionales   (borradores del proceso)
-    Herramienta_Docs > evaluacion > propuestas   (propuestas de mejora)
+    Archon > salidas > fichas          (fichas finales en .md)
+    Archon > salidas > provisionales   (borradores del proceso)
+    Archon > salidas > docx            (exportaciones Word, si las generaste)
+    Archon > evaluacion > propuestas   (propuestas de mejora)
 
 
 SKILLS (COMANDOS RÁPIDOS)
 --------------------------
 Los skills son atajos que puedes escribir directamente en Claude Code
-para ejecutar funciones específicas de la herramienta sin tener que
-escribir instrucciones largas.
+para ejecutar funciones específicas sin tener que escribir instrucciones largas.
 
   /correr-herramienta
     Ejecuta el proceso completo: lee los documentos de "entradas",
@@ -228,67 +233,100 @@ escribir instrucciones largas.
     Muestra un resumen de qué documentos hay en cada carpeta sin
     procesar nada. Útil para verificar antes de lanzar la rutina.
 
+  /reset-herramienta
+    Elimina todos los documentos generados (fichas, provisionales,
+    contextos, entradas) y deja la estructura de carpetas limpia
+    para empezar de cero. Pide confirmación antes de borrar.
+
   IMPORTANTE: para que los skills funcionen, Claude Code debe iniciarse
-  desde dentro de la carpeta Herramienta_Docs (ver PASO 2).
+  desde dentro de la carpeta Archon (ver PASO 2).
+
+
+EXPORTACIÓN A WORD
+------------------
+Archon puede exportar las fichas generadas a formato Word (.docx)
+respetando una plantilla de diseño personalizable.
+
+  Para generar una ficha en Word:
+    python scripts/md_to_docx.py "salidas/fichas/Ficha XYZ.md"
+
+  Para exportar todas las fichas a la vez:
+    python scripts/md_to_docx.py salidas/fichas/
+
+  Los archivos Word se guardan en "salidas/docx/".
+  Puedes personalizar el diseño editando "plantillas/plantilla_ficha.docx"
+  en Word sin tocar los marcadores entre llaves dobles.
 
 
 PREGUNTAS FRECUENTES
 ---------------------
 ¿Qué pasa si no tengo documentos para poner en "entradas"?
-  La herramienta lo detecta y te ofrece buscar fuentes en internet
+  Archon lo detecta y te ofrece buscar fuentes en internet
   usando los parámetros de tu dominio configurado. Por cada resultado
   verás el enlace antes de decidir si descargarlo.
 
 ¿Puedo usarla para distintos temas?
   Sí. Cada tema genera su propio archivo de configuración que se
-  guarda en la carpeta "mds". La próxima vez que uses ese mismo
-  tema, Claude lo recordará automáticamente.
+  guarda en la carpeta "mds/Contexto". La próxima vez que uses ese mismo
+  tema, Claude lo recordará automáticamente. Si describes el tema
+  con palabras distintas, Archon lo detectará por campo semántico.
 
 ¿Qué pasa si pongo un documento que no está relacionado con el tema?
   Claude lo leerá y te avisará si no puede vincularlo con los
   otros documentos. No lo procesará sin informarte.
 
 ¿Los documentos originales se modifican?
-  No. La herramienta solo lee los documentos de "entradas" y
+  No. Archon solo lee los documentos de "entradas" y
   "evaluacion". Nunca los modifica ni los borra.
 
 ¿Puedo ver el proceso de revisión, no solo el resultado final?
-  Sí. En la carpeta "salidas > provisionales" encontrarás los borradores
+  Sí. En la carpeta "salidas/provisionales" encontrarás los borradores
   intermedios "Provisional 1.0" y "Provisional 2.0", que muestran
   cómo fue evolucionando cada ficha. Las fichas finales están en
-  "salidas > fichas".
+  "salidas/fichas".
+
+¿Cómo limpio todo para empezar de cero?
+  Usa el skill /reset-herramienta. Te mostrará una lista de todo
+  lo que se borrará y pedirá confirmación antes de proceder.
 
 ¿Qué hago si Claude dice que falta un archivo?
   Significa que alguno de los archivos de la carpeta "mds" fue
   movido o eliminado. Verifica que la carpeta "mds" contenga:
-  instrucciones.md, Herramienta_Docs.md y formato.md.
+  instrucciones.md, Archon.md y formato.md.
 
 
 ESTRUCTURA DE ARCHIVOS (REFERENCIA)
 -------------------------------------
-  Herramienta_Docs/
-  ├── Orquestador.md         ← el cerebro de la herramienta (no modificar)
-  ├── README.md              ← descripción técnica
-  ├── QUE_ES_ESTA_HERRAMIENTA.txt   ← este archivo
-  ├── AVISO_LEGAL.txt        ← leer antes de usar la herramienta
-  ├── entradas/              ← AQUÍ van tus documentos fuente
+  Archon/
+  ├── Orquestador.md              ← el cerebro de la herramienta (no modificar)
+  ├── README.md                   ← descripción técnica
+  ├── QUE_ES_ESTA_HERRAMIENTA.txt ← este archivo
+  ├── AVISO_LEGAL.txt             ← leer antes de usar la herramienta
+  ├── entradas/                   ← AQUÍ van tus documentos fuente
   ├── salidas/
-  │   ├── fichas/            ← AQUÍ aparecen las fichas finales
-  │   └── provisionales/     ← AQUÍ aparecen los borradores del proceso
-  ├── evaluacion/            ← AQUÍ van tus documentos humanos (opcional)
-  │   └── propuestas/        ← AQUÍ aparecen las propuestas generadas
-  ├── mds/                   ← archivos del sistema (no modificar)
-  │   ├── Herramienta_Docs.md
+  │   ├── fichas/                 ← AQUÍ aparecen las fichas finales
+  │   ├── provisionales/          ← AQUÍ aparecen los borradores del proceso
+  │   └── docx/                   ← AQUÍ aparecen las exportaciones Word
+  ├── evaluacion/                 ← AQUÍ van tus documentos humanos (opcional)
+  │   └── propuestas/             ← AQUÍ aparecen las propuestas generadas
+  ├── mds/                        ← archivos del sistema (no modificar)
+  │   ├── Archon.md
   │   ├── instrucciones.md
   │   ├── formato.md
-  │   └── contexto_[tema].md (se genera automáticamente)
-  └── .claude/               ← comandos rápidos (no modificar)
+  │   └── Contexto/               ← contextos de dominio (generados automáticamente)
+  ├── plantillas/
+  │   └── plantilla_ficha.docx    ← plantilla Word personalizable
+  ├── scripts/
+  │   ├── md_to_docx.py           ← exportación a Word
+  │   └── crear_plantilla.py      ← genera la plantilla base
+  └── .claude/                    ← comandos rápidos (no modificar)
       └── skills/
           ├── correr-herramienta/
           ├── nuevo-dominio/
-          └── estado-docs/
+          ├── estado-docs/
+          └── reset-herramienta/
 
 
 ========================================================
-  Versión 1.02 — Herramienta_Docs
+  Versión 1.03 — Archon
 ========================================================

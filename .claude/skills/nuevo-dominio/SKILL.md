@@ -1,5 +1,5 @@
 ---
-description: Fuerza la creación de un nuevo contexto de dominio en Herramienta_Docs, omitiendo cualquier contexto previo. Uso: /nuevo-dominio
+description: Fuerza la creación de un nuevo contexto de dominio en Archon, omitiendo cualquier contexto previo. Uso: /nuevo-dominio
 allowed-tools: Read, Write
 ---
 

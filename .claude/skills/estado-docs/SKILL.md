@@ -1,9 +1,9 @@
 ---
-description: Muestra el estado actual de las carpetas de Herramienta_Docs sin ejecutar ningún proceso. Uso: /estado-docs
+description: Muestra el estado actual de las carpetas de Archon sin ejecutar ningún proceso. Uso: /estado-docs
 allowed-tools: Glob, Read
 ---
 
-Revisa el estado actual de la instalación de Herramienta_Docs en el directorio de trabajo actual y presenta un reporte con el siguiente formato:
+Revisa el estado actual de la instalación de Archon en el directorio de trabajo actual y presenta un reporte con el siguiente formato:
 
 ```
 ESTADO DE HERRAMIENTA_DOCS

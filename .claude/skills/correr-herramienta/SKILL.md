@@ -1,5 +1,5 @@
 ---
-description: Ejecuta la rutina completa de Herramienta_Docs. Uso: /correr-herramienta
+description: Ejecuta la rutina completa de Archon. Uso: /correr-herramienta
 allowed-tools: Read, Write, Glob, WebSearch, WebFetch
 ---
 
@@ -13,4 +13,4 @@ Sigue estrictamente el orden de pasos del Orquestador:
 4. PASO 4 — Ejecuta la evaluación si `evaluacion/` tiene documentos
 5. PASO 5 — Presenta el reporte final
 
-Si no existe `Orquestador.md` en el directorio actual, informa al usuario que Claude Code debe iniciarse desde dentro de la carpeta Herramienta_Docs.
+Si no existe `Orquestador.md` en el directorio actual, informa al usuario que Claude Code debe iniciarse desde dentro de la carpeta Archon.
