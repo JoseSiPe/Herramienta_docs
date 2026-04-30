@@ -17,6 +17,8 @@ salidas/provisionales/*
 !salidas/provisionales/.gitkeep
 salidas/docx/*
 !salidas/docx/.gitkeep
+salidas/evaluaciones/*
+!salidas/evaluaciones/.gitkeep
 evaluacion/propuestas/*
 !evaluacion/propuestas/.gitkeep
 
