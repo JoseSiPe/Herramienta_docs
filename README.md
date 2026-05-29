@@ -35,15 +35,24 @@ Archon/
 ├── scripts/
 │   ├── md_to_docx.py         ← convierte fichas .md a .docx
 │   └── crear_plantilla.py    ← genera la plantilla Word base
-└── .claude/
-    └── skills/
-        ├── correr-herramienta/
-        ├── nuevo-dominio/
-        ├── estado-docs/
-        └── reset-herramienta/
+├── .claude/              ← adaptador para Claude Code
+│   └── skills/
+│       ├── correr-herramienta/
+│       ├── nuevo-dominio/
+│       ├── estado-docs/
+│       └── reset-herramienta/
+└── .github/              ← adaptador para GitHub Copilot
+    ├── copilot-instructions.md
+    └── prompts/
+        ├── correr-herramienta.prompt.md
+        ├── nuevo-dominio.prompt.md
+        ├── estado-docs.prompt.md
+        └── reset-herramienta.prompt.md
 ```
 
 ## Cómo usar
+
+### Claude Code
 
 1. Deposita los documentos a revisar en `entradas/`
 2. (Opcional) Deposita documentos humanos en `evaluacion/` para contraste
@@ -53,23 +62,36 @@ Archon/
    /correr-herramienta
    ```
 
-   O si prefieres sin skills:
+   O sin skills:
 
    > "Lee el Orquestador.md y ejecuta la rutina"
 
-4. El agente te pedirá el dominio temático y, si no existe un contexto previo, te hará 5 preguntas de configuración
+4. El agente pedirá el dominio temático y, si no existe un contexto previo, hará 5 preguntas de configuración
 5. A partir de ahí opera de forma autónoma hasta generar el reporte final
 
-## Skills disponibles
+### GitHub Copilot (VS Code)
 
-| Skill | Descripción |
-|---|---|
-| `/correr-herramienta` | Ejecuta la rutina completa de principio a fin |
-| `/nuevo-dominio` | Crea un contexto de dominio nuevo sin ejecutar la rutina |
-| `/estado-docs` | Muestra qué hay en cada carpeta sin procesar nada |
-| `/reset-herramienta` | Elimina todos los documentos generados, dejando la estructura limpia |
+1. Abre la carpeta `Archon` como workspace en VS Code (`Archivo > Abrir carpeta`)
+2. Deposita los documentos a revisar en `entradas/`
+3. Abre Copilot Chat y activa el **modo agente** (icono de agente o `Chat: Agent Mode` en la configuración)
+4. Escribe `#` en el chat y selecciona el prompt del menú, o escríbelo directamente:
 
-> Los skills usan el directorio de trabajo actual. Claude Code debe iniciarse desde dentro de `Archon`.
+   ```
+   #correr-herramienta.prompt.md
+   ```
+
+> El archivo `copilot-instructions.md` se carga automáticamente en cada conversación del workspace.
+
+## Comandos disponibles
+
+| Comando | Claude Code | GitHub Copilot | Descripción |
+|---|---|---|---|
+| Ejecutar herramienta | `/correr-herramienta` | `#correr-herramienta.prompt.md` | Ejecuta la rutina completa de principio a fin |
+| Nuevo dominio | `/nuevo-dominio` | `#nuevo-dominio.prompt.md` | Crea un contexto de dominio nuevo sin ejecutar la rutina |
+| Ver estado | `/estado-docs` | `#estado-docs.prompt.md` | Muestra qué hay en cada carpeta sin procesar nada |
+| Resetear | `/reset-herramienta` | `#reset-herramienta.prompt.md` | Elimina todos los documentos generados, dejando la estructura limpia |
+
+> En ambos casos el agente debe ejecutarse con el workspace abierto en la raíz de `Archon`.
 
 ## Exportación a Word
 
