@@ -106,6 +106,40 @@ Con las respuestas, genera y guarda `mds/Contexto/contexto_[dominio].md` usando 
 
 ---
 
+### 1.4 Carpeta de sesión temática
+
+Una vez confirmado el dominio (ya sea usando un contexto existente o generando uno nuevo), formula esta pregunta:
+
+> "¿Quieres guardar las salidas de esta sesión en una carpeta temática nueva, o usar las carpetas por defecto?"
+> 1. **Nueva carpeta** — crea una subcarpeta en `salidas/` exclusiva para esta sesión
+> 2. **Carpetas por defecto** — guarda en `salidas/fichas/` y `salidas/provisionales/` como siempre
+
+**— Si el usuario elige nueva carpeta:**
+
+Sugiere el nombre `[dominio-normalizado]_[fecha-actual en formato AAAA-MM-DD]` y pregunta:
+
+> "El nombre sugerido es `[nombre-sugerido]`. ¿Lo usamos así o prefieres otro nombre?"
+
+Aplica las mismas reglas de normalización del PASO 1.1 al nombre final (minúsculas, sin acentos, guiones en lugar de espacios).
+
+Define la variable `[carpeta-sesion]` = `salidas/[nombre-normalizado]`
+
+Las rutas de salida para esta sesión serán:
+- Fichas: `[carpeta-sesion]/fichas/`
+- Provisionales: `[carpeta-sesion]/provisionales/`
+
+**— Si el usuario elige carpetas por defecto:**
+
+Define `[carpeta-sesion]` = `salidas`
+
+Las rutas de salida para esta sesión serán:
+- Fichas: `salidas/fichas/`
+- Provisionales: `salidas/provisionales/`
+
+> Crea las carpetas necesarias si no existen antes de guardar cualquier archivo.
+
+---
+
 ## PASO 2 — Carga de herramientas
 
 Carga los siguientes archivos en este orden:
@@ -166,7 +200,7 @@ Para cada documento encontrado, sigue este proceso:
 
 **— Paso previo: detección de ficha existente**
 
-Realiza una lectura inicial rápida del documento para determinar su temática (`[Temática]`). Luego verifica si existe el archivo `salidas/fichas/Ficha [Temática].md`.
+Realiza una lectura inicial rápida del documento para determinar su temática (`[Temática]`). Luego verifica si existe el archivo `[carpeta-sesion]/fichas/Ficha [Temática].md`.
 
 - **Si NO existe** → procede normalmente con los 3 ciclos
 - **Si YA EXISTE** → informa al usuario y espera instrucción:
@@ -179,10 +213,10 @@ Realiza una lectura inicial rápida del documento para determinar su temática (
 **— Ciclos iterativos (si procede):**
 
 1. Aplica los 3 ciclos iterativos definidos en `mds/instrucciones.md`
-2. Guarda los provisionales en `salidas/provisionales/`:
+2. Guarda los provisionales en `[carpeta-sesion]/provisionales/`:
    - `Provisional 1.0 — [Temática].md`
    - `Provisional 2.0 — [Temática].md`
-3. Guarda la ficha final en `salidas/fichas/`:
+3. Guarda la ficha final en `[carpeta-sesion]/fichas/`:
    - `Ficha [Temática].md`
 4. El título `[Temática]` debe derivarse del contenido del documento fuente
 5. Aplica en todo momento la estructura definida en `mds/formato.md`
@@ -244,6 +278,8 @@ Al concluir todas las fases, presenta al usuario un resumen:
 ```
 PROCESO COMPLETADO
 ==================
+Carpeta de salida: [carpeta-sesion]/
+
 Fichas generadas:
   - [lista de Ficha [Temática].md generadas]
 
@@ -261,7 +297,7 @@ Documentos en evaluacion/ omitidos:
 
 ## REGLAS GENERALES DEL AGENTE
 
-- **Rutas de salida estrictas:** los únicos destinos válidos para guardar archivos son `salidas/fichas/`, `salidas/provisionales/`, `salidas/docx/`, `evaluacion/propuestas/` y `mds/Contexto/`. Nunca guardes archivos directamente en `salidas/` ni en `mds/`
+- **Rutas de salida estrictas:** los únicos destinos válidos para guardar archivos son `[carpeta-sesion]/fichas/`, `[carpeta-sesion]/provisionales/`, `salidas/docx/`, `evaluacion/propuestas/` y `mds/Contexto/`. Nunca guardes archivos directamente en `salidas/` ni en `mds/`. El valor de `[carpeta-sesion]` se define en el PASO 1.4
 - Tras el PASO 1, opera de forma autónoma. Las únicas excepciones donde se permite interacción adicional con el usuario son: (a) PASO 3.1 cuando `entradas/` está vacía y se requiere autorización por cada descarga de internet, (b) detección de ficha existente en PASO 3 que requiere instrucción del usuario, y (c) cualquier situación de error no resuelta
 - No tomes decisiones sobre dominio o contexto sin confirmación del usuario en el PASO 1
 - No generes contenido inferido o externo a los documentos fuente

@@ -27,9 +27,9 @@ Este archivo describe el comportamiento operativo del agente durante la ejecuci�
 ### Fase 1 — Procesamiento de entradas
 
 - Procesa los documentos de `entradas/` en orden alfabético
-- Antes de cada documento, verifica si ya existe `salidas/fichas/Ficha [Temática].md` y solicita instrucción al usuario si es así
+- Antes de cada documento, verifica si ya existe `[carpeta-sesion]/fichas/Ficha [Temática].md` y solicita instrucción al usuario si es así
 - Extrae únicamente los elementos factuales identificados en `contexto_[dominio].md` como prioritarios
-- Guarda provisionales **exclusivamente** en `salidas/provisionales/` y fichas finales **exclusivamente** en `salidas/fichas/`. Nunca guardes archivos directamente en `salidas/`
+- Guarda provisionales **exclusivamente** en `[carpeta-sesion]/provisionales/` y fichas finales **exclusivamente** en `[carpeta-sesion]/fichas/`. El valor de `[carpeta-sesion]` fue definido en el PASO 1.4 del Orquestador. Nunca guardes archivos directamente en `salidas/`
 - No omite ningún documento sin informar al usuario
 
 ### Fase 2 — Evaluación
